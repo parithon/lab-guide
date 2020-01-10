@@ -1,97 +1,32 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+<center>
+  <a href="https://lab.guide">
+    <svg width="96" height="96" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <path d="m296 384.01h-80a8.009 8.0085 0 0 0-8 7.9995v23.999h96v-23.999a8.009 8.0085 0 0 0-8-7.9995z" fill="currentColor"/>
+      <path d="m247.57 464a76.517 76.513 0 0 1-3.48 15.999h23.818a76.517 76.513 0 0 1-3.48-15.999z" fill="currentColor"/>
+      <path d="m208 440a8.009 8.0085 0 0 0 8 7.9995h80a8.009 8.0085 0 0 0 8-7.9995v-7.9995h-96z" fill="currentColor"/>
+      <path d="m120 384.01h-80a8.009 8.0085 0 0 0-8 7.9995v23.999h96v-23.999a8.009 8.0085 0 0 0-8-7.9995z" fill="currentColor"/>
+      <path d="m71.571 464a76.517 76.513 0 0 1-3.48 15.999h23.818a76.517 76.513 0 0 1-3.48-15.999z" fill="currentColor"/>
+      <path d="m32 440a8.009 8.0085 0 0 0 8 7.9995h80a8.009 8.0085 0 0 0 8-7.9995v-7.9995h-96z" fill="currentColor"/>
+      <path d="m423.57 464a76.517 76.513 0 0 1-3.48 15.999h23.818a76.517 76.513 0 0 1-3.48-15.999z" fill="currentColor"/>
+      <path d="m384 440a8.009 8.0085 0 0 0 8 7.9995h80a8.009 8.0085 0 0 0 8-7.9995v-7.9995h-96z" fill="currentColor"/>
+      <path d="m472 384.01h-80a8.009 8.0085 0 0 0-8 7.9995v23.999h96v-23.999a8.009 8.0085 0 0 0-8-7.9995z" fill="currentColor"/>
+      <path d="m152 208.02h80a8.009 8.0085 0 0 0 8-7.9995v-7.9995h-96v7.9995a8.009 8.0085 0 0 0 8 7.9995z" fill="currentColor"/>
+      <path d="m240 152.02a8.009 8.0085 0 0 0-8-7.9995h-80a8.009 8.0085 0 0 0-8 7.9995v23.999h96z" fill="currentColor"/>
+      <path d="m368 112.02h-56v-23.999h-16v23.999h-8v31.998h80zm-16 23.999h-16v-15.999h16z" fill="currentColor"/>
+      <path d="m384 104.02v23.999h68a28 27.998 0 1 0 0-55.997h-4a8 7.9995 0 0 1-8-7.9995 32 31.998 0 0 0-62.514-9.6634 8 7.9995 0 0 1-5.3 5.2367 13.017 13.016 0 0 0-8.387 7.9995 8 7.9995 0 0 1-5.815 5.0857 28.145 28.143 0 0 0-21.669 23.34h39.685a8 7.9995 0 0 1 8 7.9995zm48-7.9995h32v15.999h-32zm-32 0h16v15.999h-16z" fill="currentColor"/>
+      <path d="m368 160.02h-80v31.998h80zm-16 23.999h-16v-15.999h16z" fill="currentColor"/>
+      <rect x="248" y="320.01" width="16" height="15.999" fill="currentColor"/>
+      <rect x="248" y="272.01" width="16" height="31.998" fill="currentColor"/>
+      <path d="m80 272.01a24.006 24.005 0 0 0 22.629-15.999h306.74a24 23.999 0 1 0 0-15.999h-41.371v-31.998h-80v31.998h-84.091a76.517 76.513 0 0 1-3.48-15.999h-16.858a76.517 76.513 0 0 1-3.48 15.999h-77.462a24 23.999 0 1 0-22.629 31.998zm256-55.997h16v15.999h-16z" fill="currentColor"/>
+      <path d="m78.525 336.15a8 7.9995 0 0 0-6.525 7.8626v23.999h16v-17.359l121.48-22.776a8 7.9995 0 0 0 6.525-7.8626v-47.997h-16v41.358z" fill="currentColor"/>
+      <path d="m440 368.01v-23.999a8 7.9995 0 0 0-6.525-7.8626l-121.48-22.776v-41.358h-16v47.997a8 7.9995 0 0 0 6.525 7.8626l121.48 22.776v17.359z" fill="currentColor"/>
+      <rect x="248" y="352.01" width="16" height="15.999" fill="currentColor"/>
+    </svg>
   </a>
-</p>
+</center>
 <h1 align="center">
-  Gatsby's hello-world starter
+  Lab Guide
 </h1>
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
-
-## 🚀 Quick start
-
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
-
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
-
-1.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
-
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
