@@ -14,6 +14,12 @@ module.exports = {
         tailwind: true,
         purgeOnly: [`src/styles/*.css`]
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`
+      }
+    },
   ]
 }
