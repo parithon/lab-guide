@@ -14,7 +14,7 @@ export default () => {
     }
   `)
   return (
-    <footer className="bg-info mt-5 p-5 text-light text-center">      
+    <footer className="bg-info mt-sm-5 p-5 text-light text-center">      
       <svg viewBox="0 0 512 512" height="128" width="128">
         <path fill="currentColor" d="m 296,384.01 h -80 a 8.009,8.0085 0 0 0 -8,7.9995 v 23.999 h 96 v -23.999 a 8.009,8.0085 0 0 0 -8,-7.9995 z" />
         <path fill="currentColor" d="m 247.57,464 a 76.517,76.513 0 0 1 -3.48,15.999 h 23.818 A 76.517,76.513 0 0 1 264.428,464 Z" />
