@@ -27,7 +27,18 @@ a.github {
   max-height: 60vh;
 }
 
-@media (min-width: 992px) {
+@media screen and (max-width: 576px) {
+  .bg-sm-dark {
+    background-color: $dark;
+    color: $light;
+
+    a {
+      color: $teal;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
   .position-lg-fixed {
     position: fixed;
   }

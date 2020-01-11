@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { Navbar, Nav } from "react-bootstrap"
 
+import Footer from "./footer"
 import "../styles/global.scss"
 
 export default ({ children }: any) => {
@@ -29,9 +30,10 @@ export default ({ children }: any) => {
             </Nav>
           </Navbar.Collapse>
       </Navbar>
-      <main className="container-fluid">
+      <main className="container-fluid pt-2">
         {children}
       </main>
+      <Footer />
     </>
   );
 }
