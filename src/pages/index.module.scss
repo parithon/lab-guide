@@ -1,0 +1,30 @@
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+.mtoc,
+.stoc {
+  position: sticky;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.mtoc {
+  @media screen and (max-width: 576px) {
+    background-color: $dark;
+    position: unset;
+    top: unset;
+    height: unset;
+    overflow-y: unset;
+  }
+}
+
+.stoc {
+  @media screen and (max-width: 996px) {
+    position: unset;
+    top: unset;
+    height: unset;
+    overflow-y: unset;
+  }
+}
