@@ -11,10 +11,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {}
-    },
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,6 +24,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-autolink-headers`,
           `gatsby-remark-relative-images`,
           {
             resolve: `gatsby-remark-images`,
@@ -35,7 +33,15 @@ module.exports = {
               linkImagesToOriginal: false,
               wrapperStyle: `margin-left: 0; margin-right: 0;`
             }
-          }
+          },
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              colorTheme: `Light+ (default light)`,
+              wrapperClassName: '',
+              injectStyles: true              
+            }
+          },
         ]
       }
     },

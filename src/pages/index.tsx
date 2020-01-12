@@ -9,7 +9,7 @@ export default () => {
   return (
     <Layout>
       <div className="row">
-        <div className={`order-1 order-sm-0 col-sm-3 col-lg-2 ${styles.mtoc} bg-sm-dark py-3 py-sm-0`}>
+        <div id="module-list" className={`order-1 order-sm-0 col-sm-3 col-lg-2 ${styles.mtoc} bg-sm-dark py-3 py-sm-0`}>
           <h4 className="d-sm-none font-weight-light text-uppercase">Modules</h4>
           <ul className="list-unstyled">
             <li><Link to="/">First</Link></li>
@@ -41,7 +41,7 @@ export default () => {
             <p>Posted: January 11, 2020</p>
           </Jumbotron>
           <div className="row">
-            <div className={`order-0 order-lg-1 col-lg-2 ${styles.stoc} bg-sm-dark mb-3 py-3 py-sm-0 mb-lg-0`}>
+            <div id="toc" className={`order-0 order-lg-1 col-lg-2 ${styles.stoc} bg-sm-dark mb-3 py-3 py-sm-0 mb-lg-0`}>
               <h4 className="d-sm-none font-weight-light text-uppercase">On this Page</h4>
               <span className="d-none d-sm-block font-weight-light text-uppercase">On this Page</span>
               <ul className="nav flex-column">

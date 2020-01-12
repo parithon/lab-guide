@@ -27,6 +27,22 @@ a.github {
   max-height: 60vh;
 }
 
+blockquote {
+  padding: 10px 10px 10px 18px;
+  border-left: 7px solid $primary;
+  background-color: $teal;
+  color: $white;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+pre {
+  background-color: $light !important;
+}
+
 @media screen and (max-width: 576px) {
   .bg-sm-dark {
     background-color: $dark;
