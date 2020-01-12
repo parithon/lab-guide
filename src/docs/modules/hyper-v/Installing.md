@@ -16,16 +16,16 @@ To complete the lab guides you will need a host machine running either Windows S
 
 ### Checking your computer for SLAT and VT-x support
 
-You can check to ensure your computer is ready for Hyper-V by running the following PowerShell command in an elevated (e.g. Administrator) session:
+You can check to ensure your computer is ready for Hyper-V by running the following PowerShell command:
 
 ```PowerShell
 > Get-ComputerInfo
 ...
-HyperVisorPresent                                       : True
-HyperVRequirementDataExecutionPreventionAvailable       :
-HyperVRequirementSecondLevelAddressTranslation          :
-HyperVRequirementVirtualizationFirmwareEnabled          :
-HyperVRequirementVMMonitorModeExtensions                :
+HyperVisorPresent                                       : False
+HyperVRequirementDataExecutionPreventionAvailable       : True
+HyperVRequirementSecondLevelAddressTranslation          : True
+HyperVRequirementVirtualizationFirmwareEnabled          : True
+HyperVRequirementVMMonitorModeExtensions                : True
 DeviceGuardSmartStatus                                  : Off
 DeviceGuardRequiredSecurityProperties                   :
 DeviceGuardAvailableSecurityProperties                  :
@@ -39,7 +39,7 @@ DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus :
 
 ## Enable Hyper-V using PowerShell
 
-> Installing Hyper-V will require a reboot
+> **NOTE**: Installing Hyper-V will require a reboot
 
 ### Windows 10
 

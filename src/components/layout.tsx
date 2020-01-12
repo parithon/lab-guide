@@ -26,7 +26,8 @@ export default ({ children }: any) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav activeKey="/" className="mr-auto">
-              <Link to="/" className="nav-link">Home</Link>
+              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/modules/hyper-v/installing">Module: Installing Hyper-V</Link>
             </Nav>
           </Navbar.Collapse>
       </Navbar>
