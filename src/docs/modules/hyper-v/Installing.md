@@ -3,6 +3,8 @@ title: "Installing Hyper-V"
 synopsis: "Instructions on how to install Hyper-V on Windows Server 2016+ or Windows 10 (1903+)"
 published: "2020-01-07T00:00:00Z"
 author: "Anthony Conrad"
+series: "Hyper-V"
+order: 1
 ---
 
 To complete the lab guides you will need a host machine running either Windows Server 2016+ or Windows 10 (1903 or later) and with the Hyper-V role/feature enabled. Follow this guide to enable the Hyper-V role/feature on your computer.
@@ -12,11 +14,13 @@ To complete the lab guides you will need a host machine running either Windows S
 - Windows Server 2016+ or Windows 10 Enterprise, Pro, or Education<br/>
   Note: Windows Home is not supported and the Hyper-V feature cannot be enabled
 - A 64-bit processor with Second Level Address Translation (SLAT) support
-- A processor that has either the VT-x (Intel) or AMD-V (AMD) instruction set
+- A processor that supports VM Monitor Mode Extensions, either VT-x (Intel) or AMD-V (AMD)
 
-### Checking your computer for SLAT and VT-x support
+### Checking your computer for SLAT and VM Monitor Mode support
 
 You can check to ensure your computer is ready for Hyper-V by running the following PowerShell command:
+
+Make sure that `HyperVRquirementSecondLevelAddressTranslation` and `HyperVRequirementVMMonitorModeExtensions` are both `True`
 
 ```PowerShell
 > Get-ComputerInfo
@@ -26,15 +30,7 @@ HyperVRequirementDataExecutionPreventionAvailable       : True
 HyperVRequirementSecondLevelAddressTranslation          : True
 HyperVRequirementVirtualizationFirmwareEnabled          : True
 HyperVRequirementVMMonitorModeExtensions                : True
-DeviceGuardSmartStatus                                  : Off
-DeviceGuardRequiredSecurityProperties                   :
-DeviceGuardAvailableSecurityProperties                  :
-DeviceGuardSecurityServicesConfigured                   :
-DeviceGuardSecurityServicesRunning                      :
-DeviceGuardCodeIntegrityPolicyEnforcementStatus         :
-DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus :
-
-> _
+...
 ```
 
 ## Enable Hyper-V using PowerShell

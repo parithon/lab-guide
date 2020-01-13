@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import styles from "./module.module.scss"
 
 interface HeaderProps {
+  id: string
   title: string
   synopsis: string
   published: string
@@ -17,8 +18,8 @@ interface HeaderProps {
 }
 
 const fromNowDuring = 5 * 24 * 60 * 60 * 100 // 5-days
-const Header = ({title, synopsis, published, author, timeToRead, className}: HeaderProps) => (
-  <Jumbotron className={className}>    
+const Header = ({id, title, synopsis, published, author, timeToRead, className}: HeaderProps) => (
+  <Jumbotron id={id} className={className}>    
     <div className={styles.timeToRead}>{`${timeToRead} ${timeToRead === 1 ? "minute" : "minutes"} read`}</div>
     <h1 className="display-4">{title}</h1>
     <p className="lead">{synopsis}</p>
@@ -30,7 +31,7 @@ const Header = ({title, synopsis, published, author, timeToRead, className}: Hea
 );
 
 export const query = graphql`
-  query($slug: String!) {
+  query markdown($slug: String!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
       frontmatter {
         title
@@ -56,11 +57,12 @@ export default ({data}: ModuleProps) => {
         <div id="module-list" className={`order-1 order-sm-0 col-sm-3 col-lg-2 ${styles.mtoc} bg-sm-dark py-3 py-sm-0`}>
           <h4 className="d-sm-none font-weight-light text-uppercase">Modules</h4>
           <ul className="list-unstyled">
-            {/* TODO: Add module navigation */}
+            
           </ul>
         </div>
         <div className="order-0 order-sm-1 col-sm-9 col-lg-10">
           <Header
+            id={styles.header}
             title={data.markdownRemark.frontmatter.title}
             synopsis={data.markdownRemark.frontmatter.synopsis}
             published={data.markdownRemark.frontmatter.published}
@@ -76,6 +78,7 @@ export default ({data}: ModuleProps) => {
             </div>
             <div className="order-1 order-lg-0 col-lg-9">
               <Header
+                id={styles.header}
                 title={data.markdownRemark.frontmatter.title}
                 synopsis={data.markdownRemark.frontmatter.synopsis}
                 published={data.markdownRemark.frontmatter.published}
