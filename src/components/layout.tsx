@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import { Navbar, Nav } from "react-bootstrap"
+import { Navbar, Nav, Container } from "react-bootstrap"
+import { Switch } from "react-bootstrap-switch"
 
 import Footer from "./footer"
 import "../styles/global.scss"
@@ -16,9 +17,11 @@ export default ({ children }: any) => {
       }
     }
   `);
+  const [ fluid, setFluid ] = useState(true)
   return (
     <>
       <Navbar sticky="top" bg="light" variant="light" expand="sm">
+        <Container fluid={fluid}>
           <Navbar.Brand>
             <img src="/img/logo-96.png" height="30" width="30" className="d-inline-block align-top mr-2" />
             {query.site.siteMetadata.title}
@@ -29,10 +32,16 @@ export default ({ children }: any) => {
               <Link className="nav-link" to="/">Home</Link>
               <Link className="nav-link" to="/modules/hyper-v/installing">Module: Installing Hyper-V</Link>
             </Nav>
+            <Nav>
+              <Switch onChange={(_: any, state: boolean | undefined) => setFluid(state || true)} onText="Fluid" offText="Boxed" />
+            </Nav>
           </Navbar.Collapse>
+        </Container>
       </Navbar>
-      <main className="container-fluid pt-2">
-        {children}
+      <main className="pt-2">
+        <Container fluid={fluid}>
+          {children}
+        </Container>
       </main>
       <Footer />
     </>
