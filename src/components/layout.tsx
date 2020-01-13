@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { Navbar, Nav, Container } from "react-bootstrap"
-import { Switch } from "react-bootstrap-switch"
 
 import Footer from "./footer"
 import "../styles/global.scss"
@@ -32,9 +31,7 @@ export default ({ children }: any) => {
               <Link className="nav-link" to="/">Home</Link>
               <Link className="nav-link" to="/modules/hyper-v/installing">Module: Installing Hyper-V</Link>
             </Nav>
-            <Nav>
-              <Switch onChange={(_: any, state: boolean | undefined) => setFluid(state || true)} onText="Fluid" offText="Boxed" />
-            </Nav>
+            <Nav />
           </Navbar.Collapse>
         </Container>
       </Navbar>
