@@ -33,9 +33,9 @@
     @include list-unstyled;
 
     li {
-      padding-top: 5px;
-
       > a {
+        padding: 0.5rem 1rem;
+        padding-left: 0;
         font-weight: 300;
         &:hover {
           text-decoration: none;
@@ -63,5 +63,14 @@
   @media screen and (max-width: 576px) {
     padding: .5rem;
     font-size: .75em;
+  }
+}
+
+.nav-link {
+  display: unset;
+  padding-left: 0;
+  font-weight: 300;
+  &:hover {
+    text-decoration: none;
   }
 }

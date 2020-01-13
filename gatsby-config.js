@@ -41,7 +41,7 @@ module.exports = {
               wrapperClassName: '',
               injectStyles: true              
             }
-          },
+          }
         ]
       }
     },

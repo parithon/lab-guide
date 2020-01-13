@@ -1,7 +1,7 @@
 ---
 title: "Installing Hyper-V"
 synopsis: "Instructions on how to install Hyper-V on Windows Server 2016+ or Windows 10 (1903+)"
-published: "2020-01-07T00:00:00Z"
+date: "2020-01-07T00:00:00Z"
 author: "Anthony Conrad"
 series: "Hyper-V"
 order: 1

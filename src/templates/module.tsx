@@ -36,8 +36,15 @@ export const query = graphql`
       frontmatter {
         title
         synopsis
-        published
+        date
         author
+        series
+      }
+      series {
+        name,
+        slug,
+        order,
+        title
       }
       timeToRead
       tableOfContents(maxDepth: 2, absolute: false)
@@ -50,14 +57,27 @@ interface ModuleProps {
   data: any
 }
 
+interface Series {
+  name: string
+  order: number
+  slug: string
+  title: string
+}
+
 export default ({data}: ModuleProps) => {
   return (
     <Layout>
       <div className="row">
-        <div id="module-list" className={`order-1 order-sm-0 col-sm-3 col-lg-2 ${styles.mtoc} bg-sm-dark py-3 py-sm-0`}>
-          <h4 className="d-sm-none font-weight-light text-uppercase">Modules</h4>
-          <ul className="list-unstyled">
-            
+        <div id={styles.moduleList} className={`order-1 order-sm-0 col-sm-3 col-lg-2 ${styles.mtoc} bg-sm-dark py-3 py-sm-0`}>
+          <span className="font-weight-light text-uppercase">Module: {data.markdownRemark.frontmatter.series}</span>
+          <ul className="nav flex-column">
+            {
+              data.markdownRemark.series.map(({title, slug}: Series) => (
+                <li className={`nav-item`}>
+                  <Link to={`/modules/${slug}`} className={`nav-link  ${styles.navLink}`} activeClassName="active">{title}</Link>
+                </li>
+              ))
+            }
           </ul>
         </div>
         <div className="order-0 order-sm-1 col-sm-9 col-lg-10">
@@ -65,7 +85,7 @@ export default ({data}: ModuleProps) => {
             id={styles.header}
             title={data.markdownRemark.frontmatter.title}
             synopsis={data.markdownRemark.frontmatter.synopsis}
-            published={data.markdownRemark.frontmatter.published}
+            published={data.markdownRemark.frontmatter.date}
             author={data.markdownRemark.frontmatter.author}
             timeToRead={data.markdownRemark.timeToRead}
             className="d-lg-none"
@@ -81,7 +101,7 @@ export default ({data}: ModuleProps) => {
                 id={styles.header}
                 title={data.markdownRemark.frontmatter.title}
                 synopsis={data.markdownRemark.frontmatter.synopsis}
-                published={data.markdownRemark.frontmatter.published}
+                published={data.markdownRemark.frontmatter.date}
                 author={data.markdownRemark.frontmatter.author}
                 timeToRead={data.markdownRemark.timeToRead}
                 className="d-none d-lg-block"

@@ -1,7 +1,7 @@
 ---
 title: "Configure Hyper-V Networking"
 synopsis: "Instructions on how to setup your Hyper-V virtual network"
-published: "2020-01-08T00:00:00Z"
+date: "2020-01-08T00:00:00Z"
 author: "Anthony Conrad"
 series: "Hyper-V"
 order: 2
