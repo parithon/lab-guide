@@ -1,3 +1,0 @@
-[submodule ".devcontainer"]
-	path = .devcontainer
-	url = git@github.com:parithon/lab-guide-devcontainer
