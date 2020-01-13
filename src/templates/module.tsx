@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import { Jumbotron } from "react-bootstrap"
 import Moment from "react-moment"
 import "moment-timezone"
@@ -30,6 +30,13 @@ const Header = ({id, title, synopsis, published, author, timeToRead, className}:
   </Jumbotron>
 );
 
+interface Series {
+  name: string
+  order: number
+  slug: string
+  title: string
+}
+
 export const query = graphql`
   query markdown($slug: String!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
@@ -38,41 +45,34 @@ export const query = graphql`
         synopsis
         date
         author
-        series
+        series {
+          name
+        }
       }
       series {
-        name,
-        slug,
-        order,
+        name
+        slug
         title
+        order
       }
       timeToRead
       tableOfContents(maxDepth: 2, absolute: false)
       html
     }
-  }
-`
+  }`
 
-interface ModuleProps {
-  data: any
-}
-
-interface Series {
-  name: string
-  order: number
-  slug: string
-  title: string
-}
-
-export default ({data}: ModuleProps) => {
+export default ({ data }: any) => {
   return (
     <Layout>
       <div className="row">
         <div id={styles.moduleList} className={`order-1 order-sm-0 col-sm-3 col-lg-2 ${styles.mtoc} bg-sm-dark py-3 py-sm-0`}>
-          <span className="font-weight-light text-uppercase">Module: {data.markdownRemark.frontmatter.series}</span>
+          <span className="font-weight-light text-uppercase">Module: {data.markdownRemark.frontmatter.series.name}</span>
           <ul className="nav flex-column">
             {
-              data.markdownRemark.series.map(({title, slug}: Series) => (
+              data.markdownRemark.series &&
+              data.markdownRemark.series
+                .sort((a: Series,b: Series) => a.order-b.order)
+                .map(({title, slug}: Series) => (
                 <li className={`nav-item`}>
                   <Link to={`/modules/${slug}`} className={`nav-link  ${styles.navLink}`} activeClassName="active">{title}</Link>
                 </li>

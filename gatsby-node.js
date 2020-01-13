@@ -2,48 +2,6 @@ const path = require("path")
 
 const hashset = {};
 
-module.exports.createSchemaCustomization = ({ actions }) => {  
-  const { createTypes } = actions
-  const typeDefs = `
-    type MarkdownRemark implements Node @infer {
-      series: [Series!]
-    }
-    type Series @infer {
-      name: String!
-      title: String!
-      slug: String!
-      order: Int!
-    }
-  `
-  createTypes(typeDefs)
-}
-
-module.exports.onPostBootstrap = ({ getNodesByType }) => {
-
-  const nodes = getNodesByType("MarkdownRemark")
-    .filter(md => md.frontmatter.series !== undefined)
-    .sort((a, b) => a.frontmatter.order-b.frontmatter.order)
-
-  if (!nodes || nodes.length === 0) {
-    return
-  }
-  
-  const series = nodes.map(node => {
-    const { title, series, order } = node.frontmatter
-    const slug = node.fields.slug
-    return {
-      name: series,
-      title,
-      slug,
-      order
-    }
-  })
-
-  for (const node of nodes) {
-    node.series = series
-  }
-}
-
 module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
 
@@ -99,7 +57,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  
+
   response.data.allMarkdownRemark.nodes.forEach((node) => {
     switch (node.fields.type) {
       case "blogs": {

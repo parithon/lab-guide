@@ -41,7 +41,8 @@ module.exports = {
               wrapperClassName: '',
               injectStyles: true              
             }
-          }
+          },
+          `gatsby-remark-series`
         ]
       }
     },

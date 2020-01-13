@@ -1,10 +1,12 @@
 ---
 title: "Installing Hyper-V"
 synopsis: "Instructions on how to install Hyper-V on Windows Server 2016+ or Windows 10 (1903+)"
-date: "2020-01-07T00:00:00Z"
+date: "2020-01-07"
+published: true
 author: "Anthony Conrad"
-series: "Hyper-V"
-order: 1
+series:
+  name: "Hyper-V"
+  order: 1
 ---
 
 To complete the lab guides you will need a host machine running either Windows Server 2016+ or Windows 10 (1903 or later) and with the Hyper-V role/feature enabled. Follow this guide to enable the Hyper-V role/feature on your computer.

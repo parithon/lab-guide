@@ -8,7 +8,7 @@ import styles from "./index.module.scss"
 export default () => {
   return (
     <Layout>
-      Still a work in progress
+      Layout is almost complete, still working on some navigation problems.
     </Layout>
   )
 }
