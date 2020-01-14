@@ -7,8 +7,7 @@ export default () => {
   return (
     <>
       <Helmet>
-        <html en="lang" />
-        <body className="bg-gray-100 font-sans leading-normal tracking-normal" />
+        <html lang="en" />
       </Helmet>
       <div>Hello world!</div>
     </>
