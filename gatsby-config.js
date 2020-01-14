@@ -19,6 +19,7 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
+    `gatsby-plugin-slug`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -54,5 +55,6 @@ module.exports = {
         purgeOnly: [`src/styles/*.s?css`]
       }
     },
+    `gatsby-plugin-pages`,
   ]
 }
