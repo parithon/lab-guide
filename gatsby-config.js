@@ -39,7 +39,9 @@ module.exports = {
         // GitHub Flavored Markdown mode (default: true)
         gfm: false,
         // Plugins configs
-        plugins: []
+        plugins: [
+          `gatsby-remark-series`
+        ]
       }
     }
   ]
