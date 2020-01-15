@@ -27,6 +27,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-slug`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -40,6 +41,24 @@ module.exports = {
         gfm: false,
         // Plugins configs
         plugins: [
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 750,
+              linkImagesToOrigina: false,
+              wrapperStyle: `margin-left: 0; margin-right: 0`
+            }
+          },
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              colorTheme: `Light+ (default light)`,
+              wrapperClassName: ``,
+              injectStyles: true
+            }
+          },
           `gatsby-remark-series`
         ]
       }
