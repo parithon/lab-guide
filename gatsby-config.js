@@ -18,6 +18,29 @@ module.exports = {
         tailwind: true,
         purgeOnly: [`src/styles/*.css`]
       }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`
+      }
+    },
+    `gatsby-plugin-slug`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: false,
+        // Plugins configs
+        plugins: []
+      }
     }
   ]
 }
