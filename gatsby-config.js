@@ -43,6 +43,7 @@ module.exports = {
           `gatsby-remark-series`
         ]
       }
-    }
+    },
+    `gatsby-plugin-pages`
   ]
 }
