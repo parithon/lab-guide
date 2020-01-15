@@ -5,9 +5,13 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: "Lab Guide",
+    siteDescription: "A set of labs designed to teach you features of windows."
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-postcss`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
