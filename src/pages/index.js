@@ -10,6 +10,8 @@ import {
   Card
 } from "react-bootstrap"
 
+import { Switch } from "../components/switch";
+
 import "../styles/global.scss"
 import styles from "./index.module.scss"
 
@@ -18,9 +20,9 @@ export default () => {
   const data = useStaticQuery(graphql`
     {
       site {
-        info {
+        siteMetadata {
           title
-          subtitle
+          siteDescription
         }
       }
     }
@@ -35,7 +37,7 @@ export default () => {
           <Container fluid={fluid}>
             <Navbar.Brand>
               <img src="/img/logo-96.png" height="30" width="30" className="d-inline-block align-top mr-2" alt="logo" />
-              {data.site.info.title}
+              {data.site.siteMetadata.title}
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -46,12 +48,13 @@ export default () => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+        <Switch className={styles.fluidSwitch} rounded={true} isChecked={fluid} onClick={() => setFluid(!fluid)} />
       </header>
       <main>
         <Jumbotron className={styles.jumbotron}>
           <Container fluid={fluid}>
-            <h1 className="display-4">{data.site.info.title}</h1>
-            <div className="lead">{data.site.info.subtitle}</div>
+            <h1 className="display-4">{data.site.siteMetadata.title}</h1>
+            <div className="lead">{data.site.siteMetadata.siteDescription}</div>
           </Container>
         </Jumbotron>
         <Container fluid={fluid}>

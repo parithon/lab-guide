@@ -5,9 +5,9 @@
  */
 
 module.exports = {
-  info: {
+  siteMetadata: {
     title: "Lab Guide",
-    subtitle: "A set of labs designed to teach you features of windows."
+    siteDescription: "A set of labs designed to teach you features of windows."
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
