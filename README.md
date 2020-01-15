@@ -1,13 +1,3 @@
-<style>
-  body {
-    background-color: #f8f9fa;
-    color: #212529;
-  }
-  h1 {
-    margin-top: 0;
-  }
-</style>
-
 <div align="center">
   <a href="https://lab.guide">
     <img src="./static/img/logo.svg" alt="Lab Guide Logo" width="96" height="96">
