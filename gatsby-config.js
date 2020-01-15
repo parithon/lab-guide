@@ -5,8 +5,13 @@
  */
 
 module.exports = {
+  info: {
+    title: "Lab Guide",
+    subtitle: "A set of labs designed to teach you features of windows."
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {

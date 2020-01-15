@@ -1,15 +1,80 @@
-import React from "react"
+import React, { useState } from "react"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { Helmet } from "react-helmet"
+import {
+  Jumbotron,
+  Container,
+  Navbar,
+  Nav,
+  CardColumns,
+  Card
+} from "react-bootstrap"
 
-import "../styles/global.css"
+import "../styles/global.scss"
+import styles from "./index.module.scss"
 
 export default () => {
+  const [ fluid, setFluid ] = useState(true);
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        info {
+          title
+          subtitle
+        }
+      }
+    }
+  `)
   return (
     <>
       <Helmet>
         <html lang="en" />
       </Helmet>
-      <div>Hello world!</div>
+      <header>
+        <Navbar sticky="top" bg="light" variant="light" expand="sm">
+          <Container fluid={fluid}>
+            <Navbar.Brand>
+              <img src="/img/logo-96.png" height="30" width="30" className="d-inline-block align-top mr-2" alt="logo" />
+              {data.site.info.title}
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav activeKey="/" className="mr-auto">
+                <Link className="nav-link" to="/">Home</Link>
+              </Nav>
+              <Nav />
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </header>
+      <main>
+        <Jumbotron className={styles.jumbotron}>
+          <Container fluid={fluid}>
+            <h1 className="display-4">{data.site.info.title}</h1>
+            <div className="lead">{data.site.info.subtitle}</div>
+          </Container>
+        </Jumbotron>
+        <Container fluid={fluid}>
+          <h2>Modules</h2>
+          <CardColumns>
+            {
+              [...Array(10).keys()].map((_, i) => (
+                <Card>
+                  <Card.Img variant="top" src="/img/logo.svg" height="96" />
+                  <Card.Body>
+                    <Card.Title>Title of Module {i+1}</Card.Title>
+                    <Card.Subtitle>A subtitle for module</Card.Subtitle>
+                    <Card.Text>
+                      A synopsis of the module
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              ))              
+            }
+          </CardColumns>
+        </Container>
+      </main>
+      <footer />
     </>
   )
 }

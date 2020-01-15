@@ -1,0 +1,14 @@
+@function fill-color($svg, $fillColor) {
+  @return str-replace($svg, "fill='currentColor'", "fill='" + $fillColor + "'");
+}
+
+@function fill-opacity($svg, $opacity) {
+  @return str-replace($svg, "fill-opacity='1'", "fill-opacity='" + $opacity + "'");
+}
+
+@function background-svg($rawsvg, $fillColor: "#000", $fillOpacity: "0.15") {
+  $svg: "data:image/svg+xml," + $rawsvg;
+  $svg: fill-color($svg, $fillColor);
+  $svg: fill-opacity($svg, $fillOpacity);
+  @return $svg;
+}
