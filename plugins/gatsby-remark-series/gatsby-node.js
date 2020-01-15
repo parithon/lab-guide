@@ -1,5 +1,5 @@
-module.exports.createSchemaCustomization = ({ action }) => {
-  const { createTypes } = action;
+module.exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
   const typeDef = `
     type Series {
       name: String!
