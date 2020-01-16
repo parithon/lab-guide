@@ -11,10 +11,10 @@ import {
 } from "react-bootstrap"
 
 import { Helmet } from "./helmet"
-import { Switch } from "../switch"
+import "../../styles/global.scss"
 import styles from "./layout.module.scss"
 
-export const Layout = ({ fluid, setFluid, children }) => {
+export const Layout = ({ fluid = true, children }) => {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -27,9 +27,9 @@ export const Layout = ({ fluid, setFluid, children }) => {
   return (
     <>
       <Helmet />
-      <header>
-        <Navbar sticky="top" bg="light" variant="light" expand="sm">
-          <Container fluid={fluid}>
+      <header className={styles.header}>
+        <Navbar bg="light" variant="light" expand="sm">
+          <Container>
             <Navbar.Brand>
               <img src="/img/logo-96.png" height="30" width="30" className="d-inline-block align-top mr-2" alt="logo" />
               {data.site.siteMetadata.title}
@@ -43,10 +43,18 @@ export const Layout = ({ fluid, setFluid, children }) => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-        <Switch className={styles.fluidSwitch} rounded={true} isChecked={fluid} onClick={() => setFluid(!fluid)} />
       </header>
       <main>
-        {children}
+        {
+          fluid
+          ?
+          <Container>
+            {children}
+          </Container>
+          :
+          children
+        }
+        
       </main>
       <footer></footer>
     </>

@@ -38,10 +38,19 @@ module.exports = {
         // Pedantic mode (default: true)
         pedantic: true,
         // GitHub Flavored Markdown mode (default: true)
-        gfm: false,
+        gfm: true,
         // Plugins configs
         plugins: [
+          `gatsby-remark-headings`,
           `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              colorTheme: `Solarized Dark`,
+              wrapperClassName: ``,
+              injectStyles: false
+            }
+          },
           `gatsby-remark-relative-images`,
           {
             resolve: `gatsby-remark-images`,
@@ -50,17 +59,10 @@ module.exports = {
               linkImagesToOrigina: false,
               wrapperStyle: `margin-left: 0; margin-right: 0`
             }
-          },
-          {
-            resolve: `gatsby-remark-vscode`,
-            options: {
-              colorTheme: `Light+ (default light)`,
-              wrapperClassName: ``,
-              injectStyles: true
-            }
-          },
+          }
         ]
       }
-    }
+    },
+    `gatsby-plugin-pages`,
   ]
 }
