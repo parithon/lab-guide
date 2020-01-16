@@ -4,6 +4,7 @@ synopsis: "Guides that help you prepare your host machine to run the labs"
 date: 2020-01-15
 published: true
 author: "Anthony Conrad"
+image: assets/hyper-v-host.png
 series:
   name: "Hyper-V"
   order: 0

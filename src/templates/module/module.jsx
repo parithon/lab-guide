@@ -107,6 +107,7 @@ export default ({ data }) => {
               <div className={styles.toc}>
                 <Nav className="flex-column">
                   {
+                    data.markdownRemark.fields.headings &&
                     data.markdownRemark.fields.headings.filter(heading => heading.depth <= 2)
                     .map((heading, idx) => (
                       <Button key={idx} variant="link" className={styles.linkButton} onClick={() => navigate(`#${heading.slug}`)}>{heading.title}</Button>

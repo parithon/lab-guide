@@ -27,6 +27,10 @@ export default () => {
           frontmatter {
             title
             synopsis
+            image {
+              publicURL
+              relativePath
+            }
             series {
               name
               order
@@ -57,7 +61,7 @@ export default () => {
                 <Card key={idx}>
                   {
                     node.frontmatter.image &&
-                    <Card.Img variant="top" src={node.frontmatter.image} />
+                    <Card.Img variant="top" src={node.frontmatter.image.publicURL} />
                   } 
                   <Card.Body>
                     <Card.Title>{node.frontmatter.title}</Card.Title>
@@ -71,8 +75,8 @@ export default () => {
                       data.allMarkdownRemark.nodes.filter(n => n.frontmatter.series && n.frontmatter.series.name === node.frontmatter.series.name && n.frontmatter.series.order > 0)
                         .sort((a, b) => a.frontmatter.series.order - b.frontmatter.series.order)
                         .map((n, i) => (
-                          <ListGroup.Item>
-                            <Link key={i} to={n.fields.slug}>{n.frontmatter.title}</Link>
+                          <ListGroup.Item key={i}>
+                            <Link to={n.fields.slug}>{n.frontmatter.title}</Link>
                           </ListGroup.Item>
                         ))
                     }
