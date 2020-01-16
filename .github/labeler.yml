@@ -1,0 +1,22 @@
+ui:
+  - src/pages/**/*
+  - src/styles/**/*
+  - src/components/**/*
+
+styles:
+  - src/**/*.scss
+
+elements:
+  - src/**/*.[tj]sx
+
+module:
+  - src/modules/**/*
+
+blog:
+  - src/blog/**/*
+
+markdown:
+  - src/**/*.md
+
+image:
+  - src/**/*.[png|gif|jpeg|jpg|svg]
