@@ -2,11 +2,11 @@ const toString = require("mdast-util-to-string")
 const visit = require("unist-util-visit")
 const slugs = require("github-slugger")()
 
-module.exports = ({ markdownAST, markdownNode, actions }, {
+module.exports = ({ markdownAST, markdownNode }, {
     depth = 6, 
     maintainCase = false
   }) => {
-  const { createNodeField } = actions
+  
   const headers = []
   
   slugs.reset()
@@ -22,9 +22,5 @@ module.exports = ({ markdownAST, markdownNode, actions }, {
     })
   })
 
-  createNodeField({
-    node: markdownNode,
-    name: "headings",
-    value: headers
-  })
+  markdownNode.headings = headers
 }

@@ -41,7 +41,12 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [
-          `gatsby-remark-headings`,
+          {
+            resolve: `gatsby-remark-headings`,
+            options: {
+              depth: 2
+            }
+          },
           `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-vscode`,

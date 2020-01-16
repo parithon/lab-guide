@@ -15,47 +15,6 @@ import "moment-timezone"
 import { Layout } from "../../components/layout"
 import styles from "./module.module.scss"
 
-export const query = graphql`
-query markdown($slug: String!, $series: String) {
-  markdownRemark(fields: {slug: {eq: $slug}}) {
-    frontmatter {
-      title
-      synopsis
-      date
-      author
-      series {
-        name
-        order
-      }
-    }
-    fields {
-      headings {
-        title
-        slug
-        depth
-      }
-    }
-    timeToRead
-    html
-  }
-  allMarkdownRemark(filter: {frontmatter: {series: {name: {eq: $series}}}}) {
-    nodes {
-      frontmatter {
-        title
-        published
-        series {
-          name
-          order
-        }
-      }
-      fields {
-        slug
-      }
-    }
-  }
-}
-`
-
 const last5Days = 5 * 24 * 60 * 60 * 100 // 5-days
 const Header = ({ id, title, synopsis, published, author, timeToRead, className }) => (
   <Jumbotron id={id} className={`${styles.jumbotron} ${className}`}>
@@ -68,6 +27,45 @@ const Header = ({ id, title, synopsis, published, author, timeToRead, className 
     </p>
   </Jumbotron>
 )
+
+export const query = graphql`
+  query markdown($slug: String!, $series: String) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
+      frontmatter {
+        title
+        synopsis
+        date
+        author
+        series {
+          name
+          order
+        }
+      }
+      headings {
+        title
+        slug
+        depth
+      }
+      timeToRead
+      html
+    }
+    allMarkdownRemark(filter: {frontmatter: {series: {name: {eq: $series}}}}) {
+      nodes {
+        frontmatter {
+          title
+          published
+          series {
+            name
+            order
+          }
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`
 
 export default ({ data }) => {
   return (
@@ -107,8 +105,8 @@ export default ({ data }) => {
               <div className={styles.toc}>
                 <Nav className="flex-column">
                   {
-                    data.markdownRemark.fields.headings &&
-                    data.markdownRemark.fields.headings.filter(heading => heading.depth <= 2)
+                    data.markdownRemark.headings &&
+                    data.markdownRemark.headings.filter(heading => heading.depth <= 2)
                     .map((heading, idx) => (
                       <Button key={idx} variant="link" className={styles.linkButton} onClick={() => navigate(`#${heading.slug}`)}>{heading.title}</Button>
                     ))
