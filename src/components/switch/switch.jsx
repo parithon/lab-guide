@@ -10,5 +10,3 @@ export const Switch = ({ className, isChecked, rounded, onClick }) => (
     </label>
   </div>
 )
-
-export default Switch;

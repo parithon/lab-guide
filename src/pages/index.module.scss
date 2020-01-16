@@ -9,10 +9,3 @@ $signalSvg: "<svg xmlns='http://www.w3.org/2000/svg' width='84' height='48'><pat
   background-color: $gray-100;
   background-image: url(escape-svg(background-svg($signalSvg, $primary, 0.08)));
 }
-
-.fluidSwitch {
-  position: fixed;
-  top: .5rem;
-  right: 1rem;
-  z-index: 9999;
-}
