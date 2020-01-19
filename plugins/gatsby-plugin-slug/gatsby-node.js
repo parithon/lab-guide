@@ -21,12 +21,12 @@ const onCreateNode = ({ node, actions }, pluginOptions = {}) => {
   .filter(d => d !== basename)
   .join("/")
 
-  const slug = path.join(dir, basename)
+  const slug = path.join(type, dir, basename === "index" ? "" : basename) // do not include index
 
   createNodeField({
     node,
     name: 'slug',
-    value: slug
+    value: `/${slug}`
   })
 
   createNodeField({

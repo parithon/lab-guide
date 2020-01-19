@@ -1,5 +1,20 @@
 @import "bootstrap/scss/bootstrap";
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  margin-top: 64px;
+}
+
 .container-fluid {
   .card-columns {
     @include media-breakpoint-only(xl) {

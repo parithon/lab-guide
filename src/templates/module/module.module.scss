@@ -1,0 +1,76 @@
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/utilities/text";
+
+@import "../../styles/functions";
+@import "../../styles/svg";
+
+.jumbotron {
+  position: relative;  
+  background-color: $gray-100;
+  background-image: url(escape-svg(background-svg($signal, $primary, 0.05)));
+}
+
+.mtoc,
+.stoc {
+  position: sticky;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.mtoc {
+  @media screen and (max-width: 576px) {
+    position: unset;
+    top: unset;
+    height: unset;
+    overflow-y: unset;
+  }
+}
+
+.stoc {
+  @media screen and (max-width: 996px) {
+    position: unset;
+    top: unset;
+    height: unset;
+    overflow-y: unset;
+  }
+}
+
+#header {
+  position: relative;
+}
+
+.timeToRead {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-weight: 300;
+  background-color: $primary;
+  padding: .75rem;
+  border-bottom-right-radius: .5rem;
+  border-top-left-radius: .5rem;
+  color: $white;
+
+  @media screen and (max-width: 576px) {
+    padding: .5rem;
+    font-size: .75em;
+  }
+}
+
+.nav-link {
+  display: unset;
+  padding-left: 0;
+  font-weight: 300;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.link-button {
+  @extend .font-weight-light;
+  text-align: unset;
+  margin: 0;
+  padding: 0;
+}
