@@ -1,0 +1,11 @@
+@import "bootstrap/scss/_functions.scss";
+@import "bootstrap/scss/_variables.scss";
+
+@import "../styles/functions";
+@import "../styles/svg";
+
+.jumbotron {
+  position: relative;  
+  background-color: $gray-100;
+  background-image: url(escape-svg(background-svg($signal, $primary, 0.08)));
+}
